@@ -1,0 +1,4 @@
+logging:
+  level:
+    com.lk.ss5: debug
+    org.springframework.security: debug

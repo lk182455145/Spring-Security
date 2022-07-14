@@ -1,0 +1,20 @@
+logging:
+  level:
+    com.lk.ss4: debug
+    org.springframework.security: debug
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ss3?createDatabaseIfNotExist=true&useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+server:
+  error:
+    include-message: always # 异常消息显示message信息
