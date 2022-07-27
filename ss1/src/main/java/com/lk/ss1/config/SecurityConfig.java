@@ -40,21 +40,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         /*****************基于form表单提交配置***********************/
-//        http.authorizeHttpRequests()
-////                .antMatchers(HttpMethod.POST, "/login").permitAll()   // 下面写了loginProcessingUrl的这个请求地址，这句可以不用写了
-//                .antMatchers("/login.html").permitAll()
-//                .anyRequest().authenticated();
-//        http.formLogin().loginPage("/login.html").loginProcessingUrl("/login"); // 登陆页面是login.html 登陆请求是login
-//        http.logout().logoutUrl("/logout"); //登出的路劲，默认是logout。登出后默认跳转到loginPage设定的路径(login.html)
-//        http.csrf().disable();
+        http.authorizeHttpRequests()
+//                .antMatchers(HttpMethod.POST, "/login").permitAll()   // 下面写了loginProcessingUrl的这个请求地址，这句可以不用写了
+                .antMatchers("/login.html").permitAll()
+                .anyRequest().authenticated();
+        http.formLogin().loginPage("/login.html").loginProcessingUrl("/login"); // 登陆页面是login.html 登陆请求是login
+        http.logout().logoutUrl("/logout"); //登出的路劲，默认是logout。登出后默认跳转到loginPage设定的路径(login.html)
+        http.csrf().disable();
 
         /*****************基于json的配置***********************/
-        http.authorizeHttpRequests(req -> req
-                        .antMatchers(HttpMethod.POST, "/json/login").permitAll()
-                        .anyRequest().authenticated())
-                .addFilterAt(myUsernamePasswordAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
-                .logout(logout -> logout.logoutUrl("/json/logout").logoutSuccessHandler(logoutSuccessHandler()))
-                .csrf().disable();
+//        http.authorizeHttpRequests(req -> req
+//                        .antMatchers(HttpMethod.POST, "/json/login").permitAll()
+//                        .anyRequest().authenticated())
+//                .addFilterAt(myUsernamePasswordAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
+//                .logout(logout -> logout.logoutUrl("/json/logout").logoutSuccessHandler(logoutSuccessHandler()))
+//                .csrf().disable();
     }
 
     /**

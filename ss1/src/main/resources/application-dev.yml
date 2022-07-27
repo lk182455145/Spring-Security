@@ -1,0 +1,6 @@
+server:
+  port: 8081
+
+info:
+  name: "李四dev"
+  message: "酷爱跑酷"
