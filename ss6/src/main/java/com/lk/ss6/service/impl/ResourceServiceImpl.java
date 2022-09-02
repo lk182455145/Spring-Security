@@ -1,8 +1,8 @@
 package com.lk.ss6.service.impl;
 
+import com.lk.ss6.service.ResourceService;
 import com.lk.ss6.domain.Resource;
 import com.lk.ss6.respotiry.ResourceResposity;
-import com.lk.ss6.service.ResourceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
